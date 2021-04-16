@@ -1,2 +1,2 @@
 # SkSy_HA1
-Bootstrap HA 
+Bootstrap HA von Mario Wojciechowski und Christina Gousi
