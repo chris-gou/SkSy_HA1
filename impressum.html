@@ -15,31 +15,25 @@
         <title>HA1</title>
     </head>
     <body class="d-flex flex-column min-vh-100">
+      <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+        <a class="navbar-brand active" href="ubersicht.html">Simple TODO</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+          <!-- '#' in href mit Link zur anderen Seite ersetzen-->
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="anlegen.html">TODO anlegen</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="edit.html">Bearbeiten</a>
+              </li>
+            </ul>
+          </div>
+      </nav>
         <!-- Bootstrap layout mit container-fluid -->
         <div class="container-fluid wrapper flex-grow-1">
-            <!-- Zeile mit der Navigation bar-->
-            <div class="row" id="nav">
-              <div class="col">
-                  <!-- navbar-expand-sm: navbar collapses when width<576px -->
-                  <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
-                  <a class="navbar-brand active" href="ubersicht.html">Simple TODO</a>
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarNav">
-                  <!-- '#' in href mit Link zur anderen Seite ersetzen-->
-                      <ul class="navbar-nav">
-                        <li class="nav-item">
-                          <a class="nav-link" href="anlegen.html">TODO anlegen</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="edit.html">Bearbeiten</a>
-                        </li>
-                      </ul>
-                    </div>
-                </nav>
-              </div>
-          </div>
           <p class="text-center"><strong>Impressum</strong></p>
           <p class="text-center">Anbieter:<br />Mario Wojciechowski<br />Christina Gousi</p>
           <p class="text-center">Kontakt:<br />Telefon: 012/1234567-8<br />Telefax: 012/1234567-9<br />E-Mail: mail@mustermann.de<br />Website: www.mustermann.de</p>
