@@ -14,6 +14,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
         <!-- eigene CSS Datei / falls nötig
         <link rel="stylesheet" href="style.css"> -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <title>HA1</title>
     </head>
 
@@ -62,11 +63,10 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td class="todoEdit">Vorlesung schauen.</td>
-                      <td class="todoEdit">0%</td>
-                      <td class="todoEdit">26.04.2021</td>
-                      <td><button type="button" id="btnEdit" class="btn btn-secondary" onclick="clicked()">Edit</button></td>
-                      <td><button type="button" class="btn btn-delete btn-danger">Delete</button></td>
+                      <td class="todoEdit" contenteditable=true>Vorlesung schauen.</td>
+                      <td class="todoEdit" contenteditable=true>0%</td>
+                      <td class="todoEdit" contenteditable=true>26.04.2021</td>
+                      <td><button type="button" id="btnEdit" class="btn btn-primary" onclick="clicked()">OK</button></td>
                     </tr>
                   </tbody>
                 </table>             
@@ -81,33 +81,17 @@
           </div>
           <!-- Copyright -->
         </footer>
-        <!-- Footer -->      
-        <script>
-          
+        <!-- Footer -->  
 
-          var click = true;
-          let edit = false;
+        <script>
           var areas = document.getElementsByClassName("todoEdit");
-          var noForm = document.getElementById("container").innerHTML;
           var container = document.getElementById("container");
           function clicked(){
-            if(click){
-              document.getElementById("btnEdit").setAttribute("class", "btn btn-success");
-              document.getElementById("btnEdit").innerText = "OK"
-              for (var i=0;i<areas.length;i++){
-                var area = areas[i];
-                area.setAttribute("contenteditable", "true");
-              }
-              
-              click=false;
-            } else {
-              document.getElementById("btnEdit").setAttribute("class", "btn btn-secondary");
-              document.getElementById("btnEdit").innerHTML = "Edit";
-              click=true;
-              for (var i=0;i<areas.length;i++){
-                var area = areas[i];
-                area.setAttribute("contenteditable", "false");
-              }
+            document.getElementById("btnEdit").setAttribute("class","btn btn-success");
+            document.getElementById("btnEdit").innerHTML = `<span class="glyphicon glyphicon-ok"></span>`;
+            for (var i=0;i<areas.length;i++){
+              var area = areas[i];
+              area.setAttribute("contenteditable", "false");
             }
           }
         </script> 
