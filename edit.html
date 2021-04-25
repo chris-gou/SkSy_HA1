@@ -16,9 +16,10 @@
         <link rel="stylesheet" href="style.css"> -->
         <title>HA1</title>
     </head>
+
     <body>
         <!-- Bootstrap layout mit container-fluid -->
-        <div class="container-fluid">
+        <div id="container" class="container-fluid">
             <!-- Zeile mit der Navigation bar-->
             <div class="row" id="nav">
                 <div class="col">
@@ -48,14 +49,66 @@
                   </nav>
                 </div>
             </div>
-
-            <!-- Grid system fur die columns-->
             <div class="row">
-                <!-- In Seiten mit width > 576px nimmt die 1. Spalte 4 und die 2. Spalte 8 "Plätze" aus dem Grid-->
-                <!-- In kleineren Seiten wird das eine über das andere gestacked -->
                 <div class="col col-sm-5 "><h1>TODO editieren</h1></div>
                 <div class="col col-sm-7 align-self-center"><h3>So können Sie ein TODO editieren.</h3></div>                      
             </div>  
-        </div>          
+            <div class="row">
+                <p>Um ein TODO zu editieren, gehen Sie zur Übersichtstabelle und clicken Sie auf "edit". Clicken Sie auf das Element, das Sie editieren wollen.
+                  Die Änderungen werden gespeichert, wenn Sie auf "OK" clicken.
+                </p>
+                <!-- Beispieltabelle -->
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">TODO</th>
+                      <th scope="col">Deadline</th>
+                      <th scope="col">Prozent</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tableBody">
+                    <tr>
+                      <th scope="row">1</th>
+                      <td class="todoEdit">Edit TODO</td>
+                      <td class="todoEdit">05/05/2021</td>
+                      <td class="todoEdit">10%</td>
+                      <td><button type="button" id="btnEdit" class="btn btn-secondary" onclick="clicked()">Edit</button></td>
+                      <td><button type="button" class="btn btn-delete btn-danger">Delete</button></td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+        </div>         
+        <script>
+          
+
+          var click = true;
+          let edit = false;
+          var areas = document.getElementsByClassName("todoEdit");
+          var noForm = document.getElementById("container").innerHTML;
+          var container = document.getElementById("container");
+          function clicked(){
+            if(click){
+              document.getElementById("btnEdit").setAttribute("class", "btn btn-success");
+              document.getElementById("btnEdit").innerText = "OK"
+              for (var i=0;i<areas.length;i++){
+                var area = areas[i];
+                area.setAttribute("contenteditable", "true");
+              }
+              
+              click=false;
+            } else {
+              document.getElementById("btnEdit").setAttribute("class", "btn btn-secondary");
+              document.getElementById("btnEdit").innerHTML = "Edit";
+              click=true;
+              for (var i=0;i<areas.length;i++){
+                var area = areas[i];
+                area.setAttribute("contenteditable", "false");
+              }
+            }
+          }
+        </script> 
     </body>
+    
 </html>
